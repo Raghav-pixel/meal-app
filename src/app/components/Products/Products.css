@@ -1,0 +1,85 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-top: 2rem;
+    width: 80%;
+  }
+  
+  .card {
+    margin: 20px;
+    border: 2px solid #ededed;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-items-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card > img {
+    width: 13rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-title {
+    margin-bottom: 1rem;
+  }
+  
+  .card-reviews {
+    margin-bottom: 1rem;
+    display: flex;
+  }
+  
+  .rating-star {
+    color: #d5ab55;
+  }
+  
+  .total-reviews {
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+  
+  .card-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bag-icon {
+    color: #535353;
+  }
+
+  .btn-ctr {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    height: 40px;
+    background-color: #535353;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .btn-remove {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(216, 61, 61);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
