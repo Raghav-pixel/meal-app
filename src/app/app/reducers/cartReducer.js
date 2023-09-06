@@ -8,7 +8,7 @@ export const cartReducer = (state, action) => {
         case 'REMOVE_FROM_CART':
             return {
                 ...state,
-                cart: state.cart.filter((c) => c.title !== payload.title)
+                cart: state.cart.filter((c) => c.title !== action.payload.title)
             };
         default:
             return state;

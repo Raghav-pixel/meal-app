@@ -9,19 +9,27 @@
   .card {
     margin: 20px;
     border: 2px solid #ededed;
-    padding: 20px;
-    cursor: pointer;
+    border-radius: 4px;
+    padding: 8px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
   }
 
   .card-items-details {
     display: flex;
     flex-direction: column;
   }
+
+  .img-ctr {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 4px;
+  }
   
-  .card > img {
-    width: 13rem;
+  .img-ctr > img {
     margin-bottom: 1rem;
   }
   
@@ -60,6 +68,7 @@
     align-items: center;
     align-self: flex-end;
     width: 100%;
+    cursor: pointer;
   }
 
   .btn {

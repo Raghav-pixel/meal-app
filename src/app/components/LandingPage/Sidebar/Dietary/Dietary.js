@@ -1,4 +1,4 @@
-import Input from "../../Input";
+import Input from "../../../Input";
 import "./Dietary.css";
 
 const Dietary = ({ handleChange }) => {
@@ -9,35 +9,35 @@ const Dietary = ({ handleChange }) => {
 
         <Input
           handleChange={handleChange}
-          value={50}
+          value="side dish"
           title="Dairy Free"
           name="test2"
         />
 
-        <Input
+        {/* <Input
           handleChange={handleChange}
-          value={100}
+          value="appetizer"
           title="Egg Free"
           name="test2"
         />
 
         <Input
           handleChange={handleChange}
-          value={150}
+          value="snack"
           title="Gluten Free"
           name="test2"
-        />
+        /> */}
 
         <Input
           handleChange={handleChange}
-          value={200}
+          value="salad"
           title="Healthy"
           name="test2"
         />
 
         <Input
           handleChange={handleChange}
-          value={200}
+          value="fingerfood"
           title="Quick and Easy"
           name="test2"
         />

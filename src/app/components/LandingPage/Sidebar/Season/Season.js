@@ -1,5 +1,5 @@
 import "./Season.css";
-import Input from "../../Input";
+import Input from "../../../Input";
 
 function Season({ handleChange }) {
   return (
@@ -9,25 +9,25 @@ function Season({ handleChange }) {
       <div>
         <Input
           handleChange={handleChange}
-          value="autumn"
+          value="breakfast"
           title="Autumn"
           name="test"
         />
         <Input
           handleChange={handleChange}
-          value="spring"
+          value="marinade"
           title="Spring"
           name="test"
         />
         <Input
           handleChange={handleChange}
-          value="summer"
+          value="drink"
           title="Summer"
           name="test"
         />
         <Input
           handleChange={handleChange}
-          value="winter"
+          value="soup"
           title="Winter"
           name="test"
         />

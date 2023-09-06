@@ -1,5 +1,5 @@
 import "./Meal.css";
-import Input from "../../Input";
+import Input from "../../../Input";
 
 const Meal = ({ handleChange }) => {
   return (
@@ -9,35 +9,35 @@ const Meal = ({ handleChange }) => {
 
         <Input
           handleChange={handleChange}
-          value="black"
+          value="breakfast"
           title="Breakfast"
           name="test1"
         />
 
         <Input
           handleChange={handleChange}
-          value="blue"
+          value="dessert"
           title="Dessert"
           name="test1"
         />
 
         <Input
           handleChange={handleChange}
-          value="red"
+          value="main course"
           title="Dinner"
           name="test1"
         />
 
         <Input
           handleChange={handleChange}
-          value="green"
+          value="marinade"
           title="Holidays"
           name="test1"
         />
 
         <Input
           handleChange={handleChange}
-          value="green"
+          value="snack"
           title="Snacks and Appetizers"
           name="test1"
         />
