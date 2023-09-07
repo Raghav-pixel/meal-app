@@ -2,7 +2,16 @@
 
 import React from 'react';
 import './NavBar.css';
-import { AiFillYoutube, AiOutlineHeart, AiOutlineInstagram, AiOutlineShoppingCart, AiOutlineTwitter, AiOutlineUserAdd, AiOutlineWifi } from 'react-icons/ai';
+import { 
+  AiFillYoutube, 
+  AiOutlineHeart, 
+  AiOutlineInstagram, 
+  AiOutlineShoppingCart, 
+  AiOutlineTwitter, 
+  AiOutlineUserAdd, 
+  AiOutlineWifi,
+  AiOutlineUser
+ } from 'react-icons/ai';
 import { BiLogoFacebook } from 'react-icons/bi'
 import { BsBookmark, BsFillCartFill, BsPinterest } from 'react-icons/bs';
 import { LiaSearchSolid } from 'react-icons/lia';
@@ -10,9 +19,9 @@ import { CartState } from '../../app/Context/Context';
 // import { useNavigate } from 'react-router-dom';
 
 const Nav = ({ query, handleInputChange }) => {
-  const { state : { cart }, dispatch } = CartState();
+  const { state : { cart, favourite }, dispatch } = CartState();
 //   const navigate = useNavigate();
-  console.log(cart, 'cart')
+  console.log(cart, favourite, 'cart');
   return (
     <div className='nav-ctr'>
       <div className='nav-head'>
@@ -27,8 +36,8 @@ const Nav = ({ query, handleInputChange }) => {
             type='text'
             className='search-input'
             placeholder='Search Recipies...'
-            // value={query}
-            // onChange={(e) => handleInputChange(e)}
+            value={query}
+            onChange={(e) => handleInputChange(e)}
           />
           <div className='search-icon'><LiaSearchSolid style={{ height: '100%' }} /></div>
         </div>
@@ -39,8 +48,8 @@ const Nav = ({ query, handleInputChange }) => {
           <a className='cart-ctr'>
             <BsBookmark className='nav-icons'/>
             {
-              cart.length > 0 ? (
-                <div className='cart-qty'><span>{cart.length}</span></div>
+              favourite.length > 0 ? (
+                <div className='qty'><span>{favourite.length}</span></div>
               ) : ''
             }
             <span style={{ marginLeft: '8px' }}>Favourites</span>
@@ -54,10 +63,20 @@ const Nav = ({ query, handleInputChange }) => {
             <BsFillCartFill className='nav-icons'/>
             {
               cart.length > 0 ? (
-                <div className='cart-qty'><span>{cart.length}</span></div>
+                <div className='qty'><span>{cart.length}</span></div>
               ) : ''
             }
             <span style={{ marginLeft: '8px' }}>Cart</span>
+          </a>
+        </div>
+
+        <div 
+          className='profile-container' 
+          // onClick={() => navigate('/profile')}
+        >
+          <a className='profile-ctr'>
+            <AiOutlineUser className='nav-icons'/>
+            {/* <span style={{ marginLeft: '8px' }}>Profile</span> */}
           </a>
         </div>
       </div>

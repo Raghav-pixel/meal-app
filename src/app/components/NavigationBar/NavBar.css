@@ -62,7 +62,7 @@ input {
 }
 
 .favourite-container {
-    width: 3.8rem;
+    /* width: 3.8rem; */
     height: 3.5rem;
     /* background-color: rgb(65, 198, 65); */
     display: flex;
@@ -70,7 +70,7 @@ input {
     justify-content: space-between;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     grid-column-start: 10;
     grid-column-end: 11;
 }
@@ -79,6 +79,16 @@ input {
     width: 3.8rem;
     height: 3.5rem;
     /* background-color: rgb(65, 198, 65); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    cursor: pointer;
+    grid-column-start: 11;
+    grid-column-end: 12;
+}
+
+.profile-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -96,7 +106,7 @@ input {
     height: 100%;
 }
 
-.cart-qty {
+.qty {
     background-color: #ff6161;
     font-size: 12px;
     border-radius: 7px;

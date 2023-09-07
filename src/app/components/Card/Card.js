@@ -4,10 +4,10 @@ import { BsFillBagFill } from "react-icons/bs";
 import { CartState } from "../../app/Context/Context";
 
 const Card = ({ img, title }) => {
-  const { state : { cart }, dispatch } = CartState();
+  const { state : { cart, favourite }, dispatch } = CartState();
 
 
-  async function handleClickAdd() {
+  const handleClickAdd = () => {
     dispatch({
       type: 'ADD_TO_CART',
       payload: {
@@ -22,6 +22,23 @@ const Card = ({ img, title }) => {
       payload: { img, title }
     });
   }
+
+  const handleClickAddFavourite = () => {
+    dispatch({
+      type: 'ADD_TO_FAVOURITE',
+      payload: {
+        img, title
+      }
+    })
+  }
+
+  const handleClickRemoveFavourite = () => {
+    dispatch({
+      type: 'REMOVE_FROM_FAVOURITE',
+      payload: { img, title }
+    });
+  }
+
   return (
     <>
       <section className="card">
@@ -30,18 +47,6 @@ const Card = ({ img, title }) => {
         </div>
         <div className="card-details">
           <h3 className="card-title">{title}</h3>
-          {/* <section className="card-reviews">
-            {star} {star} {star} {star}
-            <span className="total-reviews">{reviews}</span>
-          </section>
-          <section className="card-price">
-            <div className="price">
-              <del>{prevPrice}</del> {newPrice}
-            </div>
-            <div className="bag">
-              <BsFillBagFill className="bag-icon" />
-            </div>
-          </section> */}
           <section className="btn-ctr">
             {
               cart.some((c) => c.title === title) ? (
@@ -57,6 +62,25 @@ const Card = ({ img, title }) => {
                     className="btn"
                 >
                     Add to Cart
+                </button>
+              )
+            }
+          </section>
+          <section className="btn-ctr">
+            {
+              favourite.some((c) => c.title === title) ? (
+                <button 
+                    onClick={handleClickRemoveFavourite} 
+                    className="btn-remove"
+                >
+                    Remove from Favourites
+                </button>
+              ) : (
+                <button 
+                    onClick={() => handleClickAddFavourite()}
+                    className="btn"
+                >
+                    Add to Favourites
                 </button>
               )
             }

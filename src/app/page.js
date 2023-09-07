@@ -20,18 +20,16 @@ export default function Home() {
     setType(e.target.value);
   }
   
-  // useEffect(() => {
-  //   axios.get(`https://api.spoonacular.com/recipes/complexSearch?type=${type}&apiKey=64f62f7b598341dfb2b5edefec0816b9`)
-  //     .then((data) => {
-  //       console.log(data, '[category][res]');
-  //       setCategoryData(data.data.results);
-  //     })
-  // }, [type]);
+  useEffect(() => {
+    axios.get(`https://api.spoonacular.com/recipes/complexSearch?type=${type}&query=${query}&apiKey=64f62f7b598341dfb2b5edefec0816b9`)
+      .then((data) => {
+        setCategoryData(data.data.results);
+      })
+  }, [type, query]);
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
   }
-  console.log(categoryData, '[meals]')
 
   // filter products on searching item
   const filteredItems = categoryData.filter((p) => 
@@ -57,7 +55,6 @@ export default function Home() {
     //   );
     // }
   
-    console.log(filteredProducts, '[filter]')
     return filteredProducts.map(({ id, image, title }) => (
       <Card 
         key={id}
@@ -72,7 +69,7 @@ export default function Home() {
   return (
     <main style={{ marginTop: '160px', display: 'flex', justifyContent: 'space-between' }}>
       <>
-        <Nav />
+        <Nav query={query} handleInputChange={handleInputChange} />
         <LandingPage
           handleChange={handleChange}
           results={results}
