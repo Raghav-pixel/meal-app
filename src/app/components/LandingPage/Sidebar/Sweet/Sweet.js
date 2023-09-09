@@ -1,7 +1,7 @@
 import "./Sweet.css";
 import Input from "../../../Input";
 
-const Sweet = ({ handleChange }) => {
+const Sweet = ({ handleChangeSweet }) => {
   return (
     <>
       <div>
@@ -22,14 +22,14 @@ const Sweet = ({ handleChange }) => {
         /> */}
 
         <Input
-          handleChange={handleChange}
+          handleChange={handleChangeSweet}
           value="bread"
           title="Cakes and Quick Breads"
           name="test3"
         />
 
         <Input
-          handleChange={handleChange}
+          handleChange={handleChangeSweet}
           value="drink"
           title="Cookies and Bars"
           name="test3"
